@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<!--lang
+
+Author URI: http://www.vargatibi.com/
+
+-->
+<html>
+<head>
+<title>Tibi's  chat site</title>
+<meta charset="utf-8">
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- T-->
+
+  
+  <div class="wrapper row1">
+   
+    <header id="header" class="hoc clear"> 
+     
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html">SZTE MSC Infó tanár szakos hallgatók hirei</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">kezdőlap</a></li>
+          <li> <a href="fotok.html">Képtár</a>           
+          </li>             
+                                     
+                <li> <a href="https://www.coosp.etr.u-szeged.hu/">CooSpace</a></li>
+          <li><a href="https://web4.neptun.u-szeged.hu/hallgato/login.aspx">Neptun</a></li>
+        </ul>
+      </nav>
+      <!-- nav vége -->
+    </header>
+  </div>
+
+<!-- -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- fö részt kezd -->
+    <div class="sidebar one_quarter first"> 
+      <!-- bal old-->
+      <h6>Jelentkezz be</h6>
+      <nav class="sdb_holder" id="Logger">
+        <ul>
+         
+          <li> <button id="google" class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i> Google  </button></li>
+          <li>
+           <ul>  <li></li>
+            </ul>
+          </li>
+          <li><button   id="facebook" class="faicon-facebook" href="#"><i class="fa fa-facebook"></i> Facebook</button></li>
+            </ul>             
+     <ul>   </ul>             
+        <ul>         
+          <li>  <button id="vendeg" class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i> Vendég </button></li>
+        </ul>
+        <ul></ul>
+        <ul>          
+        <li>  <button id="logout" class="faicon-logout" ><i class="fa fa-logout" src="kepek/faviconoutlog.gif"></i>Kilépés</button></li><hr>
+        </ul>      
+      
+      <div class="sdb_holder">
+        <h6>Hasznos oldalak</h6>
+        <address>
+         <li> <a href="https://github.com/madmaxman69/tibi-s-chat-site-demo">GitHub</a>           
+        </li>            
+         <li> <a href="https://www.javascript.com/">JavaScript</a>           
+        </li>            
+         <li> <a href="https://www.w3schools.com/js/">w3schools</a>           
+        </li>            
+        <li> <a href="https://javascript.info/">The Modern Javascript</a>           
+        </li>          
+         <li> <a href="https://firebase.google.com/">Firebase</a>           
+        </li>  
+          <li> <a href="https://stackoverflow.com/">stack Owerflow</a>           
+        </li>   
+        </address> 
+      </div>
+      </nav>
+      <div class="sdb_holder"> </div>
+      <!--link vége -->
+    </div>
+   
+    <!-- jobb old rész -->
+    <div class="content three_quarter"> 
+      <!-- chat -->
+      <h3>Élő beszélgetés a társakkal</h3>
+      <p> "Nem lehet összekötni a pontokat a jövőt fürkészve, az összefüggések csak utólag visszanézve látszanak."  -  Steve Jobs	</p><hr>
+      <p id = "identifier">
+          <font size = "5">
+          <img src="kepek/avatar.png" alt=""/>
+          <label for="username"> </label>
+          Helló <span id="username"></span>
+          </font></p>
+      <h4>Üzenetek </h4>
+      <div class="container2" id="messages">      
+        </div>
+<div class="block clear" id="Sender">  
+        <h2></h2><hr>
+            
+            <label for="comment">A Te hozzászólásod?</label>
+            <textarea name="comment" id="text" cols="25" rows="8"></textarea><hr>
+          <div> 
+          <ul id="sender" class="nospace inline pushright">
+                <li><a><input type="file" class="btn inverse" id="file"></a></li>
+                <li><a class="btn" id="send">Elküld</a></li> <div id="uploder"><progress value="0" max="100" class = "hidden" id="uploader">0%</progress> </div>      
+         </ul>
+         </div>
+
+     <!----  <p><div class="btn-group" role="group" aria-label="Basic example">
+          <button type="file" id="file" class="btn btn-secondary">Választ</button>
+          <button type="küld" id="send"class="btn btn-secondary">Middle</button>
+          <button type="reset" class="btn btn-secondary">töröl</button>
+        </div> -->
+          
+           
+        
+          <!-- COMPONENT START -->
+          
+       
+          
+
+        
+      </div>      <!--förész  vége -->
+  </div>
+   
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+
+<!-- lentebb -->
+<!--tt55 -->
+ 
+<div class="wrapper quicklinks">
+ <!-- <nav class="hoc clear"> 
+    <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div> </nav>-->
+</div>
+
+<!-- láb rész -->
+<div class="wrapper row5">  
+</div>
+<!--impressum js -->
+
+<!-- alulról fel-->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+</div>
+<!-- JSCRIPT -->
+<script  src="scripts/index.js"></script>
+<script src="scripts/jquery.min.js"></script>
+<script src="/scripts/jquery.backtotop.js"></script>
+<script src="/scripts/jquery.mobilemenu.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase-functions.js"></script>
+
+</body>
+</html>
