@@ -1,6 +1,4 @@
 
- charset="utf-8";
-
 var config = {
         apiKey: "AIzaSyAfEjZHu8OkfAlBxvWvseH_pTTT1nG7Xho",
         authDomain: "tibi-hirek.firebaseapp.com",
@@ -10,11 +8,12 @@ var config = {
         messagingSenderId: "3187137114"
 
     };
+    charset="utf-8";
 alert('Ha ide belépsz viselkedj jól vagy haladj tovább !');
 document.addEventListener('DOMContentLoaded', function() {
-    var messagesList = document.getElementById('messages'),
+    var messagesList = document.getElementById('uzenetek'),
         textInput = document.getElementById('text'),
-        sendButton = document.getElementById('send'),
+        sendButton = document.getElementById('kuld'),
         login = document.getElementById('login'),
         googleLogin = document.getElementById('google'),
         facebookLogin = document.getElementById('facebook'),
@@ -35,7 +34,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const settings = {
       timestampsInSnapshots: true
     };
-    var database = firebase.database();     
+    var database = firebase.database(); 
+    function formatDatum(date) {
+        var monthNames = ["Január",
+        "Február",
+        "Március",
+        "Április",
+        "Május",
+        "Június",
+        "Július",
+        "Augusztus",
+        "September",
+        "Octóber",
+        "November",
+        "December"           
+        ];          
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+      
+        return year  + ' ' + monthNames[monthIndex] + ' ' + day ;
+      }
+      
+      console.log(formatDatum(new Date()));   
       
     sendButton.addEventListener('click', function(ti) {
         var chat = {
@@ -47,30 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         databaseRef.push().set(chat);
         textInput.value = '';
     });
-    formatDatum = datum => {        
-      const months = new Array(
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December"
-        );       
-        const month = d.getMonth();    
-        const day = d.getDate();      
-        let year = d.getFullYear();         
-        const hours = d.getHours();      
-        const minutes = ("0" + d.getMinutes()).slice(-2);
-         return (
-          day + " " + months[month] + " '" + year + " - " + hours + ":" + minutes
-        );
-      };      
+     
+        
     databaseRef.on('child_added', function(snapshot) {
         var chat = snapshot.val();
         addUzenet (chat);   
